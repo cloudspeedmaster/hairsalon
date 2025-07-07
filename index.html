@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRANDS | Premium Hair Salon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #d4af37;
+            --accent: #f8f4e3;
+            --text: #333333;
+            --light: #ffffff;
+            --dark: #0a0a0a;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        .cormorant { font-family: 'Cormorant Garamond', serif; }
+        .hero-section {
+            background: linear-gradient(to right, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.7)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--secondary), #f5e6a8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .btn-primary { background-color: var(--secondary); color: var(--dark); transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: var(--primary); color: var(--light); }
+        .btn-outline { border: 2px solid var(--secondary); color: var(--secondary); transition: all 0.3s ease; }
+        .btn-outline:hover { background-color: var(--secondary); color: var(--dark); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: var(--secondary); transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .custom-shape-divider { position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; }
+        .custom-shape-divider svg { position: relative; display: block; width: calc(100% + 1.3px); height: 70px; }
+        .custom-shape-divider .shape-fill { fill: var(--light); }
+        .service-card { transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .service-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); }
+        .service-card:hover .service-icon { transform: rotate(15deg) scale(1.2); color: var(--secondary); }
+        .service-icon { transition: all 0.5s ease; }
+        .stylist-card { overflow: hidden; transition: all 0.5s ease; }
+        .stylist-card:hover { transform: translateY(-5px); }
+        .stylist-card:hover .stylist-overlay { opacity: 1; }
+        .stylist-overlay { background: linear-gradient(to top, rgba(26, 26, 26, 0.9), transparent); opacity: 0; transition: all 0.5s ease; }
+        .gallery-item { overflow: hidden; position: relative; }
+        .gallery-item img { transition: all 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay { background: linear-gradient(to top, rgba(26, 26, 26, 0.8), transparent); opacity: 0; transition: all 0.5s ease; }
+        .testimonial-card::before { content: '"'; position: absolute; top: -20px; left: 20px; font-size: 80px; font-family: 'Cormorant Garamond', serif; color: var(--secondary); opacity: 0.2; }
+        .appointment-form input:focus, .appointment-form textarea:focus, .appointment-form select:focus { border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25); }
+        .pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        /* Language & Socials Floaters */
+        .language-switcher { bottom: 20px; left: 20px; z-index: 100; }
+        .language-switcher .options { display: none; }
+        .language-switcher.active .options { display: block; }
+        .social-floater { bottom: 20px; right: 20px; z-index: 100; }
+        .social-icon { opacity: 0; transform: translateY(10px); transition: all 0.3s ease; }
+        .social-floater.active .social-icon { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-accent">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-3xl font-bold cormorant text-primary"><span class="gradient-text">STRANDS</span></a>
+                <div class="hidden md:flex space-x-8" id="desktop-nav">
+                    <!-- Nav links will be inserted here by JS -->
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-primary focus:outline-none"><i class="fas fa-bars text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white bg-opacity-95 backdrop-filter backdrop-blur-lg">
+             <div class="container mx-auto px-4 py-3 flex flex-col space-y-4" id="mobile-nav">
+                <!-- Mobile nav links will be inserted here by JS -->
+             </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center relative">
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-6xl md:text-8xl font-bold cormorant text-white mb-6" data-aos="fade-up" data-aos-delay="200" data-translate="hero_title">ELEVATE YOUR STYLE</h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10" data-aos="fade-up" data-aos-delay="400" data-translate="hero_subtitle">Where artistry meets precision to create your signature look</p>
+            <div class="flex flex-col md:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="600">
+                <a href="#services" class="btn-primary py-4 px-8 rounded-full font-medium text-lg" data-translate="hero_button1">Explore Services</a>
+                <a href="#contact" class="btn-outline py-4 px-8 rounded-full font-medium text-lg" data-translate="hero_button2">Book Appointment</a>
+            </div>
+        </div>
+        <div class="custom-shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <img src="https://picsum.photos/id/119/800/1000" alt="Salon Interior" class="rounded-lg shadow-2xl w-full h-auto object-cover">
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-6" data-translate="about_title"><span class="gradient-text">Redefining</span> Hair Artistry</h2>
+                    <p class="text-gray-600 mb-6 text-lg" data-translate="about_p1">At STRANDS, we believe that exceptional hair is more than just a service—it's an art form. Our team of passionate stylists combines technical expertise with creative vision to deliver personalized looks that enhance your natural beauty and reflect your unique personality.</p>
+                    <p class="text-gray-600 mb-8 text-lg" data-translate="about_p2">Founded in 2015, our salon has become a destination for those who seek more than just a haircut. We've created a space where innovation meets tradition, where every client receives undivided attention, and where the result is always a masterpiece.</p>
+                    <a href="#contact" class="btn-primary py-4 px-8 rounded-full font-medium inline-block" data-translate="about_button">Book Your Experience</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50 pattern-bg relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="services_title">Our <span class="gradient-text">Premium</span> Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="services_subtitle">Discover our comprehensive range of hair services designed to transform, enhance, and maintain your signature look.</p>
+            </div>
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service cards will be inserted here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stylists Section -->
+    <section id="stylists" class="py-20 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="stylists_title">Meet Our <span class="gradient-text">Expert</span> Stylists</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="stylists_subtitle">Our team of talented professionals brings creativity, passion, and expertise to every client experience.</p>
+            </div>
+            <div id="stylists-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stylist cards will be inserted here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50 pattern-bg relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="gallery_title">Our <span class="gradient-text">Stunning</span> Portfolio</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="gallery_subtitle">Browse our gallery to see the artistry and skill of our stylists and get inspired for your next visit.</p>
+            </div>
+            <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Gallery items will be inserted here by JS -->
+            </div>
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="https://www.instagram.com/yourprofile" target="_blank" class="btn-primary py-4 px-8 rounded-full font-medium inline-block" data-translate="gallery_button">
+                    View on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white relative overflow-hidden">
+         <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="testimonials_title">Client <span class="gradient-text">Testimonials</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="testimonials_subtitle">Hear what our clients have to say about their experiences at STRANDS.</p>
+            </div>
+            <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial cards will be inserted here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50 pattern-bg relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="pricing_title">Our <span class="gradient-text">Pricing</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="pricing_subtitle">Transparent pricing for our premium services. All services include a consultation, shampoo, and style.</p>
+            </div>
+            <div id="pricing-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pricing cards will be inserted here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="contact_title">Book Your <span class="gradient-text">Appointment</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="contact_subtitle">Ready to transform your look? Schedule your appointment today and experience the STRANDS difference.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold cormorant text-primary mb-6" data-translate="contact_info_title">Contact Information</h3>
+                    <div class="space-y-6">
+                         <!-- Contact info items will be inserted here by JS -->
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 appointment-form" data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold cormorant text-primary mb-6" data-translate="contact_form_title">Request a Booking</h3>
+                    <form action="#" method="POST" class="space-y-6" id="booking-form">
+                         <!-- Form fields will be inserted here by JS -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map Section -->
+    <section id="location" class="relative">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.851928099301!2d-118.40118038478411!3d34.07362228060068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc35fbd217ef%3A0x26949c8f3a3737b!2sRodeo%20Dr%2C%20Beverly%20Hills%2C%20CA%2090210%2C%20USA!5e0!3m2!1sen!2s!4v1678886543210!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Sub-Footer -->
+    <footer class="bg-primary">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
+            <p>© 2024 STRANDS Hair Salon. <span data-translate="footer_text">All Rights Reserved. Designed with</span> <i class="fas fa-heart text-secondary"></i>.</p>
+        </div>
+    </footer>
+
+    <!-- Floating UI Elements -->
+    <!-- Language Switcher -->
+    <div id="language-switcher" class="language-switcher fixed">
+        <button id="lang-toggle-btn" class="flex items-center gap-2 bg-white/80 backdrop-blur-sm shadow-lg rounded-full px-3 py-2 text-sm font-semibold text-primary">
+            <!-- Current language will be shown here -->
+        </button>
+        <div class="options absolute bottom-full mb-2 bg-white/90 backdrop-blur-sm shadow-lg rounded-lg overflow-hidden">
+            <!-- Language options will be added here -->
+        </div>
+    </div>
+    
+    <!-- Social Media Floater -->
+    <div id="social-floater" class="social-floater fixed flex flex-col items-center gap-3">
+        <a href="https://wa.me/13105550123" target="_blank" class="social-icon w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center shadow-lg"><i class="fab fa-whatsapp text-2xl"></i></a>
+        <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon w-12 h-12 rounded-full bg-pink-500 text-white flex items-center justify-center shadow-lg"><i class="fab fa-instagram text-2xl"></i></a>
+        <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg"><i class="fab fa-facebook-f text-2xl"></i></a>
+        <button id="social-toggle-btn" class="w-14 h-14 rounded-full bg-secondary text-dark flex items-center justify-center shadow-xl transform transition-transform duration-300">
+            <i class="fas fa-share-alt text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Main Script -->
+    <script src="app.js"></script>
+
+</body>
+</html>
