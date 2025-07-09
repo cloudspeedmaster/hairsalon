@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,247 +18,378 @@
             --light: #ffffff;
             --dark: #0a0a0a;
         }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
-            background-color: var(--light);
-            overflow-x: hidden;
-        }
-        .cormorant { font-family: 'Cormorant Garamond', serif; }
-        .hero-section {
-            background: linear-gradient(to right, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.7)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        .gradient-text {
-            background: linear-gradient(to right, var(--secondary), #f5e6a8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .btn-primary { background-color: var(--secondary); color: var(--dark); transition: all 0.3s ease; }
-        .btn-primary:hover { background-color: var(--primary); color: var(--light); }
-        .btn-outline { border: 2px solid var(--secondary); color: var(--secondary); transition: all 0.3s ease; }
-        .btn-outline:hover { background-color: var(--secondary); color: var(--dark); }
-        .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: var(--secondary); transition: width 0.3s ease; }
-        .nav-link:hover::after { width: 100%; }
-        .custom-shape-divider { position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; }
-        .custom-shape-divider svg { position: relative; display: block; width: calc(100% + 1.3px); height: 70px; }
+        body { @apply font-['Montserrat',_sans-serif] text-[var(--text)] bg-[var(--light)] overflow-x-hidden; }
+        .cormorant { @apply font-['Cormorant_Garamond',_serif]; }
+        .hero-section { background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("https://i.imgur.com/RWznAA6.png"); @apply bg-cover bg-center bg-fixed; }
+        
+        /* Utility & Component Classes */
+        .section-title { @apply text-4xl md:text-5xl font-bold cormorant text-primary mb-4; }
+        .section-subtitle { @apply text-gray-600 max-w-2xl mx-auto text-lg; }
+        .card { @apply bg-white rounded-xl shadow-lg p-8; }
+        .service-card { @apply card flex flex-col transition-all duration-500 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:transform hover:-translate-y-2 hover:shadow-2xl; }
+        .stylist-card { @apply rounded-xl overflow-hidden shadow-lg transition-transform duration-500 hover:-translate-y-1; }
+        .testimonial-card { @apply card relative transition-transform duration-500 hover:-translate-y-1 hover:scale-[1.02]; }
+        .testimonial-card::before { content: '"'; @apply absolute top-[-20px] left-5 text-8xl cormorant text-secondary opacity-20; }
+        
+        .btn-primary { @apply py-4 px-8 rounded-full font-medium text-lg bg-secondary text-dark relative overflow-hidden z-[1] transition-colors duration-300; }
+        .btn-primary::before { content: ''; @apply absolute top-0 left-0 w-0 h-full bg-primary transition-all duration-300 ease-in-out z-[-1]; }
+        .btn-primary:hover { @apply text-light; }
+        .btn-primary:hover::before { @apply w-full; }
+        
+        .btn-outline { @apply py-4 px-8 rounded-full font-medium text-lg border-2 border-secondary text-light transition-all duration-300; }
+        .btn-outline:hover { @apply bg-secondary text-dark; }
+
+        .nav-link { @apply relative text-primary hover:text-secondary font-medium; }
+        .nav-link::after { content: ''; @apply absolute w-0 h-0.5 bottom-[-4px] left-0 bg-secondary transition-all duration-300; }
+        .nav-link:hover::after { @apply w-full; }
+
+        .gradient-text { @apply bg-gradient-to-r from-secondary to-[#f5e6a8] bg-clip-text text-transparent; }
+        .text-stroke { -webkit-text-stroke: 1px var(--secondary); @apply text-transparent; }
+
+        .custom-shape-divider { @apply absolute bottom-0 left-0 w-full overflow-hidden leading-none; }
+        .custom-shape-divider svg { @apply relative block w-[calc(100%+1.3px)] h-[70px]; }
         .custom-shape-divider .shape-fill { fill: var(--light); }
-        .service-card { transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .service-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); }
-        .service-card:hover .service-icon { transform: rotate(15deg) scale(1.2); color: var(--secondary); }
-        .service-icon { transition: all 0.5s ease; }
-        .stylist-card { overflow: hidden; transition: all 0.5s ease; }
-        .stylist-card:hover { transform: translateY(-5px); }
-        .stylist-card:hover .stylist-overlay { opacity: 1; }
-        .stylist-overlay { background: linear-gradient(to top, rgba(26, 26, 26, 0.9), transparent); opacity: 0; transition: all 0.5s ease; }
-        .gallery-item { overflow: hidden; position: relative; }
-        .gallery-item img { transition: all 0.5s ease; }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-        .gallery-overlay { background: linear-gradient(to top, rgba(26, 26, 26, 0.8), transparent); opacity: 0; transition: all 0.5s ease; }
-        .testimonial-card::before { content: '"'; position: absolute; top: -20px; left: 20px; font-size: 80px; font-family: 'Cormorant Garamond', serif; color: var(--secondary); opacity: 0.2; }
-        .appointment-form input:focus, .appointment-form textarea:focus, .appointment-form select:focus { border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25); }
-        .pattern-bg {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        /* Language & Socials Floaters */
-        .language-switcher { bottom: 20px; left: 20px; z-index: 100; }
-        .language-switcher .options { display: none; }
-        .language-switcher.active .options { display: block; }
-        .social-floater { bottom: 20px; right: 20px; z-index: 100; }
-        .social-icon { opacity: 0; transform: translateY(10px); transition: all 0.3s ease; }
-        .social-floater.active .social-icon { opacity: 1; transform: translateY(0); }
+        
+        .bg-secondary { background-color: var(--secondary); }
+        .text-secondary { color: var(--secondary); }
+        .bg-primary { background-color: var(--primary); }
+        .text-dark { color: var(--dark); }
+        .bg-accent { background-color: var(--accent); }
     </style>
 </head>
-<body class="bg-accent">
+<body>
+    
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-md">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="#home" class="text-3xl font-bold cormorant text-primary"><span class="gradient-text">STRANDS</span></a>
-                <div class="hidden md:flex space-x-8" id="desktop-nav">
-                    <!-- Nav links will be inserted here by JS -->
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-primary focus:outline-none"><i class="fas fa-bars text-xl"></i></button>
-                </div>
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-lg shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#home" class="text-3xl font-bold cormorant text-primary"><span class="gradient-text">STRANDS</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link" data-translate-key="navHome">Home</a>
+                <a href="#about" class="nav-link" data-translate-key="navAbout">About</a>
+                <a href="#services" class="nav-link" data-translate-key="navServices">Services</a>
+                <a href="#stylists" class="nav-link" data-translate-key="navStylists">Stylists</a>
+                <a href="#gallery" class="nav-link" data-translate-key="navGallery">Gallery</a>
+                <a href="#contact" class="nav-link" data-translate-key="navContact">Contact</a>
             </div>
+            <button id="mobile-menu-button" class="md:hidden text-primary focus:outline-none"><i class="fas fa-bars text-xl"></i></button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white bg-opacity-95 backdrop-filter backdrop-blur-lg">
-             <div class="container mx-auto px-4 py-3 flex flex-col space-y-4" id="mobile-nav">
-                <!-- Mobile nav links will be inserted here by JS -->
-             </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg shadow-md">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#home" class="text-primary hover:text-secondary font-medium py-2" data-translate-key="navHome">Home</a>
+                <a href="#about" class="text-primary hover:text-secondary font-medium py-2" data-translate-key="navAbout">About</a>
+                <a href="#services" class="text-primary hover:text-secondary font-medium py-2" data-translate-key="navServices">Services</a>
+                <a href="#stylists" class="text-primary hover:text-secondary font-medium py-2" data-translate-key="navStylists">Stylists</a>
+                <a href="#gallery" class="text-primary hover:text-secondary font-medium py-2" data-translate-key="navGallery">Gallery</a>
+                <a href="#contact" class="text-primary hover:text-secondary font-medium py-2" data-translate-key="navContact">Contact</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero-section min-h-screen flex items-center relative">
         <div class="container mx-auto px-4 z-10 text-center">
-            <h1 class="text-6xl md:text-8xl font-bold cormorant text-white mb-6" data-aos="fade-up" data-aos-delay="200" data-translate="hero_title">ELEVATE YOUR STYLE</h1>
-            <p class="text-xl md:text-2xl text-gray-200 mb-10" data-aos="fade-up" data-aos-delay="400" data-translate="hero_subtitle">Where artistry meets precision to create your signature look</p>
-            <div class="flex flex-col md:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="600">
-                <a href="#services" class="btn-primary py-4 px-8 rounded-full font-medium text-lg" data-translate="hero_button1">Explore Services</a>
-                <a href="#contact" class="btn-outline py-4 px-8 rounded-full font-medium text-lg" data-translate="hero_button2">Book Appointment</a>
+            <h1 class="text-6xl md:text-8xl font-bold cormorant text-white mb-6" data-aos="fade-up"><span class="text-stroke" data-translate-key="heroElevate">ELEVATE</span> <span class="gradient-text" data-translate-key="heroYourStyle">YOUR STYLE</span></h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10" data-aos="fade-up" data-aos-delay="200" data-translate-key="heroSubtitle">Where artistry meets precision to create your signature look</p>
+            <div class="flex flex-col md:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="400">
+                <a href="#services" class="btn-primary" data-translate-key="btnExplore">Explore Services</a>
+                <a href="#contact" class="btn-outline" data-translate-key="btnBook">Book Appointment</a>
             </div>
         </div>
-        <div class="custom-shape-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce"><a href="#about" class="flex flex-col items-center"><span class="text-sm mb-2" data-translate-key="scrollDown">Scroll Down</span><i class="fas fa-chevron-down"></i></a></div>
+        <div class="custom-shape-divider"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path></svg></div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white relative overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2" data-aos="fade-right">
-                    <img src="https://picsum.photos/id/119/800/1000" alt="Salon Interior" class="rounded-lg shadow-2xl w-full h-auto object-cover">
-                </div>
-                <div class="lg:w-1/2" data-aos="fade-left">
-                    <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-6" data-translate="about_title"><span class="gradient-text">Redefining</span> Hair Artistry</h2>
-                    <p class="text-gray-600 mb-6 text-lg" data-translate="about_p1">At STRANDS, we believe that exceptional hair is more than just a service—it's an art form. Our team of passionate stylists combines technical expertise with creative vision to deliver personalized looks that enhance your natural beauty and reflect your unique personality.</p>
-                    <p class="text-gray-600 mb-8 text-lg" data-translate="about_p2">Founded in 2015, our salon has become a destination for those who seek more than just a haircut. We've created a space where innovation meets tradition, where every client receives undivided attention, and where the result is always a masterpiece.</p>
-                    <a href="#contact" class="btn-primary py-4 px-8 rounded-full font-medium inline-block" data-translate="about_button">Book Your Experience</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Sections will be dynamically populated by JavaScript -->
+    <main>
+        <section id="about" class="py-20"><div id="about-container" class="container mx-auto px-4"></div></section>
+        <section id="services" class="py-20 bg-gray-50"><div id="services-container" class="container mx-auto px-4"></div></section>
+        <section id="stylists" class="py-20"><div id="stylists-container" class="container mx-auto px-4"></div></section>
+        <section id="gallery" class="py-20 bg-gray-50"><div id="gallery-container" class="container mx-auto px-4"></div></section>
+        <section id="testimonials" class="py-20"><div id="testimonials-container" class="container mx-auto px-4"></div></section>
+        <section id="contact" class="py-20 bg-gray-50"><div id="contact-container" class="container mx-auto px-4"></div></section>
+    </main>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50 pattern-bg relative overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="services_title">Our <span class="gradient-text">Premium</span> Services</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="services_subtitle">Discover our comprehensive range of hair services designed to transform, enhance, and maintain your signature look.</p>
-            </div>
-            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service cards will be inserted here by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Stylists Section -->
-    <section id="stylists" class="py-20 bg-white relative overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="stylists_title">Meet Our <span class="gradient-text">Expert</span> Stylists</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="stylists_subtitle">Our team of talented professionals brings creativity, passion, and expertise to every client experience.</p>
-            </div>
-            <div id="stylists-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Stylist cards will be inserted here by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-gray-50 pattern-bg relative overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="gallery_title">Our <span class="gradient-text">Stunning</span> Portfolio</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="gallery_subtitle">Browse our gallery to see the artistry and skill of our stylists and get inspired for your next visit.</p>
-            </div>
-            <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <!-- Gallery items will be inserted here by JS -->
-            </div>
-            <div class="text-center mt-12" data-aos="fade-up">
-                <a href="https://www.instagram.com/yourprofile" target="_blank" class="btn-primary py-4 px-8 rounded-full font-medium inline-block" data-translate="gallery_button">
-                    View on Instagram
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-white relative overflow-hidden">
-         <div class="container mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="testimonials_title">Client <span class="gradient-text">Testimonials</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="testimonials_subtitle">Hear what our clients have to say about their experiences at STRANDS.</p>
-            </div>
-            <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial cards will be inserted here by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-20 bg-gray-50 pattern-bg relative overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="pricing_title">Our <span class="gradient-text">Pricing</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="pricing_subtitle">Transparent pricing for our premium services. All services include a consultation, shampoo, and style.</p>
-            </div>
-            <div id="pricing-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Pricing cards will be inserted here by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white relative overflow-hidden">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold cormorant text-primary mb-4" data-translate="contact_title">Book Your <span class="gradient-text">Appointment</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-translate="contact_subtitle">Ready to transform your look? Schedule your appointment today and experience the STRANDS difference.</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-right">
-                    <h3 class="text-2xl font-semibold cormorant text-primary mb-6" data-translate="contact_info_title">Contact Information</h3>
-                    <div class="space-y-6">
-                         <!-- Contact info items will be inserted here by JS -->
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-8 appointment-form" data-aos="fade-left">
-                    <h3 class="text-2xl font-semibold cormorant text-primary mb-6" data-translate="contact_form_title">Request a Booking</h3>
-                    <form action="#" method="POST" class="space-y-6" id="booking-form">
-                         <!-- Form fields will be inserted here by JS -->
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Google Map Section -->
-    <section id="location" class="relative">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.851928099301!2d-118.40118038478411!3d34.07362228060068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc35fbd217ef%3A0x26949c8f3a3737b!2sRodeo%20Dr%2C%20Beverly%20Hills%2C%20CA%2090210%2C%20USA!5e0!3m2!1sen!2s!4v1678886543210!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-
-    <!-- Sub-Footer -->
-    <footer class="bg-primary">
-        <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
-            <p>© 2024 STRANDS Hair Salon. <span data-translate="footer_text">All Rights Reserved. Designed with</span> <i class="fas fa-heart text-secondary"></i>.</p>
-        </div>
-    </footer>
-
-    <!-- Floating UI Elements -->
-    <!-- Language Switcher -->
-    <div id="language-switcher" class="language-switcher fixed">
-        <button id="lang-toggle-btn" class="flex items-center gap-2 bg-white/80 backdrop-blur-sm shadow-lg rounded-full px-3 py-2 text-sm font-semibold text-primary">
-            <!-- Current language will be shown here -->
-        </button>
-        <div class="options absolute bottom-full mb-2 bg-white/90 backdrop-blur-sm shadow-lg rounded-lg overflow-hidden">
-            <!-- Language options will be added here -->
-        </div>
-    </div>
+    <!-- Google Maps & Footer -->
+    <section id="location" class="bg-accent"><div class="container mx-auto p-4 md:p-8"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.166943361819!2d19.8169929154238!3d41.32754597926955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310e5f227b6f%3A0x40092af10675750!2sSkanderbeg%20Square%2C%20Tirana%2C%20Albania!5e0!3m2!1sen!2s" width="100%" height="450" style="border:0;" class="rounded-lg shadow-lg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></section>
+    <footer class="bg-primary text-gray-400 text-center py-8 px-4"><p data-translate-key="footerRights">© 2024 STRANDS | Premium Hair Salon. All Rights Reserved.</p><p class="text-sm mt-2" data-translate-key="footerDesign">Designed with <i class="fas fa-heart text-secondary"></i></p></footer>
     
-    <!-- Social Media Floater -->
-    <div id="social-floater" class="social-floater fixed flex flex-col items-center gap-3">
-        <a href="https://wa.me/13105550123" target="_blank" class="social-icon w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center shadow-lg"><i class="fab fa-whatsapp text-2xl"></i></a>
-        <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon w-12 h-12 rounded-full bg-pink-500 text-white flex items-center justify-center shadow-lg"><i class="fab fa-instagram text-2xl"></i></a>
-        <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg"><i class="fab fa-facebook-f text-2xl"></i></a>
-        <button id="social-toggle-btn" class="w-14 h-14 rounded-full bg-secondary text-dark flex items-center justify-center shadow-xl transform transition-transform duration-300">
-            <i class="fas fa-share-alt text-2xl"></i>
-        </button>
+    <!-- Floating Widgets -->
+    <div class="fixed bottom-4 left-4 z-[100]">
+        <div class="relative" id="lang-switcher">
+            <button id="lang-toggle" class="flex items-center space-x-2 bg-secondary text-dark p-2 rounded-full shadow-lg transition-transform hover:scale-105"><img id="lang-flag" src="https://flagcdn.com/w20/gb.png" class="w-5 h-5 rounded-full object-cover"><span id="lang-text" class="font-semibold text-sm">EN</span><i class="fas fa-chevron-up text-xs transition-transform"></i></button>
+            <div id="lang-options" class="hidden absolute bottom-full mb-2 w-full bg-secondary rounded-lg shadow-lg overflow-hidden">
+                <a href="#" class="lang-option flex items-center space-x-2 p-2 text-dark hover:bg-black/10" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" class="w-5 h-5 rounded-full object-cover"><span class="text-sm">EN</span></a>
+                <a href="#" class="lang-option flex items-center space-x-2 p-2 text-dark hover:bg-black/10" data-lang="al"><img src="https://flagcdn.com/w20/al.png" class="w-5 h-5 rounded-full object-cover"><span class="text-sm">AL</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="fixed bottom-4 right-4 z-[100]">
+        <div class="relative" id="social-switcher">
+             <div id="social-options" class="hidden absolute bottom-full right-0 mb-4 flex flex-col items-center space-y-3">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-secondary shadow-lg flex items-center justify-center text-dark transform transition-transform hover:scale-110"><i class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-secondary shadow-lg flex items-center justify-center text-dark transform transition-transform hover:scale-110"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="https://wa.me/355691234567" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-secondary shadow-lg flex items-center justify-center text-dark transform transition-transform hover:scale-110"><i class="fab fa-whatsapp text-2xl"></i></a>
+            </div>
+            <button id="social-toggle" class="flex items-center justify-center bg-secondary text-dark w-14 h-14 rounded-full shadow-lg transform transition-transform hover:scale-110"><i class="fas fa-share-alt text-xl"></i></button>
+        </div>
     </div>
 
-    <!-- Main Script -->
-    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- DATA ---
+            const translations = {
+                en: {
+                    navHome: "Home", navAbout: "About", navServices: "Services", navStylists: "Stylists", navGallery: "Gallery", navContact: "Contact",
+                    heroElevate: "ELEVATE", heroYourStyle: "YOUR STYLE", heroSubtitle: "Where artistry meets precision to create your signature look",
+                    btnExplore: "Explore Services", btnBook: "Book Appointment", scrollDown: "Scroll Down",
+                    aboutTitle: "<span class='gradient-text'>Redefining</span> Hair Artistry",
+                    aboutPara1: "At STRANDS, we believe that exceptional hair is more than just a service—it's an art form. Our team of passionate stylists combines technical expertise with creative vision to deliver personalized looks that enhance your natural beauty and reflect your unique personality.",
+                    aboutPara2: "Founded in 2015, our salon has become a destination for those who seek more than just a haircut. We've created a space where innovation meets tradition, where every client receives undivided attention, and where the result is always a masterpiece.",
+                    aboutAward: "Award Winning", aboutAwardSub: "Recognized Excellence", aboutEco: "Eco-Friendly", aboutEcoSub: "Sustainable Products",
+                    btnBookExperience: "Book Your Experience",
+                    servicesTitle: "Our <span class='gradient-text'>Premium</span> Services",
+                    servicesSubtitle: "Discover our comprehensive range of hair services designed to transform, enhance, and maintain your signature look.",
+                    viewSubservices: "View Sub-services & Prices", free: "Free",
+                    service1Title: "Precision Haircuts", service1Desc: "Expertly crafted cuts tailored to your face shape, hair texture, and personal style for a look that's uniquely yours.",
+                    service1Sub1: "Women's Cut & Style", service1Sub2: "Men's Cut & Style", service1Sub3: "Child's Cut", service1Sub4: "Fringe Trim",
+                    service2Title: "Creative Coloring", service2Desc: "From subtle highlights to bold transformations, our specialists use premium products for vibrant, long-lasting results.",
+                    service2Sub1: "Root Touch-up", service2Sub2: "Full Color", service2Sub3: "Gloss / Toner",
+                    service3Title: "Balayage & Ombré", service3Desc: "Hand-painted highlights that create a natural, sun-kissed effect for a low-maintenance, dimensional look.",
+                    service3Sub1: "Partial Balayage", service3Sub2: "Full Balayage", service3Sub3: "Ombré",
+                    service4Title: "Styling & Blowouts", service4Desc: "Professional styling for any occasion, from everyday elegance to special event glamour. Feel confident and beautiful.",
+                    service4Sub1: "Classic Blowout", service4Sub2: "Updo / Formal Style", service4Sub3: "Bridal Styling",
+                    service5Title: "Keratin Treatments", service5Desc: "Smooth, frizz-free hair with our premium keratin services. Enjoy manageable, silky hair that lasts for months.",
+                    service5Sub1: "Express Keratin", service5Sub2: "Full Keratin", service5Sub3: "Frizz Control Shot",
+                    service6Title: "Extensions & Additions", service6Desc: "Add length, volume, or color with our high-quality hair extensions. Various methods to suit your lifestyle and hair.",
+                    service6Sub1: "Consultation", service6Sub2: "Tape-In (per pack)", service6Sub3: "Removal & Re-tape",
+                    stylistsTitle: "Meet Our <span class='gradient-text'>Expert</span> Stylists", stylistsSubtitle: "Our team of talented professionals brings creativity, passion, and expertise to every client experience.",
+                    stylist1Role: "Creative Director", stylist1Desc: "Specializing in precision cuts and creative color with over 15 years of international experience.",
+                    stylist2Role: "Color Specialist", stylist2Desc: "Expert in balayage, ombré, and creative color techniques that enhance natural beauty.",
+                    stylist3Role: "Style Director", stylist3Desc: "Specializes in avant-garde styling, editorial work, and transformative makeovers.",
+                    stylist4Role: "Texture Expert", stylist4Desc: "Specializing in curly hair, extensions, and treatments that enhance natural texture.",
+                    bookWith: "Book with",
+                    galleryTitle: "Our <span class='gradient-text'>Stunning</span> Portfolio", gallerySubtitle: "Browse our gallery to see the artistry and skill of our stylists and get inspired for your next visit.",
+                    gallery1Title: "Balayage Transformation", gallery1Artist: "By Ardit Krasniqi", gallery2Title: "Vibrant Color Melt", gallery2Artist: "By Elira Berisha", gallery3Title: "Sleek Bob Cut", gallery3Artist: "By Besnik Gashi", gallery4Title: "Curly Hair Enhancement", gallery4Artist: "By Valbona Hoxha", gallery5Title: "Long Layered Style", gallery5Artist: "By Ardit Krasniqi", gallery6Title: "Platinum Blonde", gallery6Artist: "By Elira Berisha",
+                    btnViewInstagram: "View on Instagram",
+                    testimonialsTitle: "Client <span class='gradient-text'>Testimonials</span>", testimonialsSubtitle: "Hear what our clients have to say about their experiences at STRANDS.",
+                    testimonial1Quote: `"Ardit completely transformed my hair! He listened to what I wanted and offered suggestions that worked perfectly for my face shape. I've never received so many compliments!"`, testimonial1ClientType: "Regular Client",
+                    testimonial2Quote: `"I've been to many salons, but STRANDS is in a league of its own. The attention to detail and the results are exceptional. Elira is a color genius!"`, testimonial2ClientType: "Loyal Client",
+                    testimonial3Quote: `"As someone with curly hair, finding a stylist who understands my texture has been challenging. Valbona not only understands curls but celebrates them! My hair has never felt healthier."`, testimonial3ClientType: "New Client",
+                    contactTitle: "Book Your <span class='gradient-text'>Appointment</span>", contactSubtitle: "Ready to transform your look? Schedule your appointment today and experience the STRANDS difference.",
+                    contactInfoTitle: "Contact Information", contactAddress: "Our Address", contactEmail: "Email Us", contactCall: "Call Us",
+                    contactFormTitle: "Send Us a Message", formName: "Name", formEmail: "Email", formService: "Service", formMessage: "Message", formButton: "Send Request",
+                    formServiceSelect: "Select a service...", formService1: "Precision Haircut", formService2: "Creative Coloring", formService3: "Balayage & Ombré", formService4: "Styling & Blowouts", formService5: "Keratin Treatment", formService6: "Hair Extensions",
+                    footerRights: "© 2024 STRANDS | Premium Hair Salon. All Rights Reserved.", footerDesign: "Designed with <i class='fas fa-heart text-secondary'></i>",
+                },
+                al: {
+                    navHome: "Kryefaqja", navAbout: "Rreth Nesh", navServices: "Shërbimet", navStylists: "Stilistët", navGallery: "Galeria", navContact: "Kontakti",
+                    heroElevate: "LARTËSO", heroYourStyle: "STILIN TËND", heroSubtitle: "Ku mjeshtëria takohet me saktësinë për të krijuar pamjen tuaj unike",
+                    btnExplore: "Eksploro Shërbimet", btnBook: "Rezervo një takim", scrollDown: "Lëviz Poshtë",
+                    aboutTitle: "<span class='gradient-text'>Rindërtimi i</span> Artit të Flokëve",
+                    aboutPara1: "Në STRANDS, ne besojmë se flokët e jashtëzakonshëm janë më shumë se një shërbim—janë një formë arti. Ekipi ynë i stilistëve të pasionuar kombinon ekspertizën teknike me vizionin krijues për të ofruar pamje të personalizuara që theksojnë bukurinë tuaj natyrore dhe pasqyrojnë personalitetin tuaj unik.",
+                    aboutPara2: "Themeluar në 2015, salloni ynë është bërë një destinacion për ata që kërkojnë më shumë se një prerje flokësh. Ne kemi krijuar një hapësirë ku inovacioni takohet me traditën, ku çdo klient merr vëmendje të plotë dhe ku rezultati është gjithmonë një kryevepër.",
+                    aboutAward: "Fitues Çmimesh", aboutAwardSub: "Ekselencë e Njohur", aboutEco: "Eko-Miqësore", aboutEcoSub: "Produkte të Qëndrueshme",
+                    btnBookExperience: "Rezervo Përvojën Tënde",
+                    servicesTitle: "Shërbimet Tona <span class='gradient-text'>Premium</span>",
+                    servicesSubtitle: "Zbuloni gamën tonë të gjerë të shërbimeve të flokëve të dizajnuara për të transformuar, përmirësuar dhe mirëmbajtur pamjen tuaj unike.",
+                    viewSubservices: "Shiko Nën-shërbimet & Çmimet", free: "Falë",
+                    service1Title: "Prerje Preçize", service1Desc: "Prerje të krijuara me mjeshtëri të përshtatura për formën e fytyrës, teksturën e flokëve dhe stilin tuaj personal për një pamje që është unikale për ju.",
+                    service1Sub1: "Prerje & Stilim për Femra", service1Sub2: "Prerje & Stilim për Meshkuj", service1Sub3: "Prerje për Fëmijë", service1Sub4: "Korigjim Ballukesh",
+                    service2Title: "Ngjyrosje Kreative", service2Desc: "Nga fijet delikate te transformimet e guximshme, specialistët tanë përdorin produkte premium për rezultate të gjalla dhe afatgjata.",
+                    service2Sub1: "Lyerje Rrënje", service2Sub2: "Ngjyrosje e Plotë", service2Sub3: "Shkëlqim / Toner",
+                    service3Title: "Balayage & Ombré", service3Desc: "Fije të pikturuara me dorë që krijojnë një efekt natyral, të puthur nga dielli për një pamje me mirëmbajtje të ulët dhe dimensionale.",
+                    service3Sub1: "Balayage e Pjesshme", service3Sub2: "Balayage e Plotë", service3Sub3: "Ombré",
+                    service4Title: "Stilim & Tharje", service4Desc: "Stilim profesional për çdo rast, nga eleganca e përditshme te glamuri i eventeve speciale. Ndihuni të sigurt dhe të bukur.",
+                    service4Sub1: "Tharje Klasike", service4Sub2: "Stil Formal", service4Sub3: "Stilim Nusërie",
+                    service5Title: "Trajtime me Keratinë", service5Desc: "Flokë të lëmuar, pa elektrizim me shërbimet tona premium të keratinës. Shijoni flokë të menaxhueshëm dhe të mëndafshtë që zgjasin me muaj.",
+                    service5Sub1: "Keratinë Express", service5Sub2: "Keratinë e Plotë", service5Sub3: "Trajtim Kundër Elektrizimit",
+                    service6Title: "Zgjatime & Shtesa", service6Desc: "Shtoni gjatësi, vëllim ose ngjyrë me zgjatimet tona të flokëve me cilësi të lartë. Metoda të ndryshme për t'iu përshtatur stilit tuaj të jetesës dhe flokëve.",
+                    service6Sub1: "Konsultë", service6Sub2: "Tape-In (për paketë)", service6Sub3: "Heqje & Rivendosje",
+                    stylistsTitle: "Takoni Stilistët Tanë <span class='gradient-text'>Ekspertë</span>", stylistsSubtitle: "Ekipi ynë i profesionistëve të talentuar sjell kreativitet, pasion dhe ekspertizë në çdo përvojë klienti.",
+                    stylist1Role: "Drejtor Kreativ", stylist1Desc: "I specializuar në prerje precize dhe ngjyra kreative me mbi 15 vjet përvojë ndërkombëtare.",
+                    stylist2Role: "Specialiste Ngjyrash", stylist2Desc: "Eksperte në balayage, ombré dhe teknika kreative të ngjyrave që theksojnë bukurinë natyrore.",
+                    stylist3Role: "Drejtor Stili", stylist3Desc: "I specializuar në stilim avangardë, punë editoriale dhe transformime rrënjësore.",
+                    stylist4Role: "Eksperte Teksture", stylist4Desc: "E specializuar në flokë kaçurrelë, zgjatime dhe trajtime që përmirësojnë teksturën natyrale.",
+                    bookWith: "Rezervo me",
+                    galleryTitle: "Portofoli Ynë <span class='gradient-text'>Mahnitës</span>", gallerySubtitle: "Shfletoni galerinë tonë për të parë mjeshtërinë dhe aftësitë e stilistëve tanë dhe frymëzohuni për vizitën tuaj të ardhshme.",
+                    gallery1Title: "Transformim Balayage", gallery1Artist: "Nga Ardit Krasniqi", gallery2Title: "Shkrirje Ngjyrash", gallery2Artist: "Nga Elira Berisha", gallery3Title: "Prerje Bob", gallery3Artist: "Nga Besnik Gashi", gallery4Title: "Theksim Kaçurrelash", gallery4Artist: "Nga Valbona Hoxha", gallery5Title: "Stil me Shkallëzim", gallery5Artist: "Nga Ardit Krasniqi", gallery6Title: "Bjonde Platini", gallery6Artist: "Nga Elira Berisha",
+                    btnViewInstagram: "Shiko në Instagram",
+                    testimonialsTitle: "Vlerësimet e <span class='gradient-text'>Klientëve</span>", testimonialsSubtitle: "Dëgjoni çfarë thonë klientët tanë për përvojat e tyre në STRANDS.",
+                    testimonial1Quote: `"Arditi ma transformoi plotësisht flokun! Ai dëgjoi çfarë doja dhe ofroi sugjerime që funksionuan në mënyrë perfekte për formën e fytyrës sime. Asnjëherë nuk kam marrë kaq shumë komplimente!"`, testimonial1ClientType: "Kliente e Rregullt",
+                    testimonial2Quote: `"Kam qenë në shumë sallone, por STRANDS është në një nivel tjetër. Vëmendja ndaj detajeve dhe rezultatet janë vazhdimisht të jashtëzakonshme. Elira është një gjeni ngjyrash!"`, testimonial2ClientType: "Klient Besnik",
+                    testimonial3Quote: `"Si dikush me flokë kaçurrelë, gjetja e një stilisteje që kupton teksturën time ka qenë sfiduese. Valbona jo vetëm që i kupton kaçurrelat, por i feston ato! Flokët e mi nuk kanë qenë kurrë më të shëndetshëm."`, testimonial3ClientType: "Kliente e Re",
+                    contactTitle: "Rezervoni <span class='gradient-text'>Takimin</span> Tuaj", contactSubtitle: "Gati për të transformuar pamjen tuaj? Rezervoni takimin tuaj sot dhe përjetoni diferencën e STRANDS.",
+                    contactInfoTitle: "Informacion Kontakti", contactAddress: "Adresa Jonë", contactEmail: "Na Dërgoni Email", contactCall: "Na Telefononi",
+                    contactFormTitle: "Na Dërgoni një Mesazh", formName: "Emri", formEmail: "Email", formService: "Shërbimi", formMessage: "Mesazhi", formButton: "Dërgo Kërkesën",
+                    formServiceSelect: "Zgjidhni një shërbim...", formService1: "Prerje Preçize", formService2: "Ngjyrosje Kreative", formService3: "Balayage & Ombré", formService4: "Stilim & Tharje", formService5: "Trajtim me Keratinë", formService6: "Zgjatime Flokësh",
+                    footerRights: "© 2024 STRANDS | Sallon Flokësh Premium. Të gjitha të drejtat e rezervuara.", footerDesign: "Dizajnuar me <i class='fas fa-heart text-secondary'></i>",
+                }
+            };
+            const servicesData = [
+                { icon: 'fa-cut', title: 'service1Title', desc: 'service1Desc', subs: [{ name: 'service1Sub1', price: '€50' }, { name: 'service1Sub2', price: '€30' }, { name: 'service1Sub3', price: '€20' }, { name: 'service1Sub4', price: '€10' }] },
+                { icon: 'fa-palette', title: 'service2Title', desc: 'service2Desc', subs: [{ name: 'service2Sub1', price: '€65' }, { name: 'service2Sub2', price: '€90' }, { name: 'service2Sub3', price: '€40' }] },
+                { icon: 'fa-magic', title: 'service3Title', desc: 'service3Desc', subs: [{ name: 'service3Sub1', price: '€120' }, { name: 'service3Sub2', price: '€180' }, { name: 'service3Sub3', price: '€160' }] },
+                { icon: 'fa-wind', title: 'service4Title', desc: 'service4Desc', subs: [{ name: 'service4Sub1', price: '€35' }, { name: 'service4Sub2', price: '€70' }, { name: 'service4Sub3', price: '€150' }] },
+                { icon: 'fa-fire', title: 'service5Title', desc: 'service5Desc', subs: [{ name: 'service5Sub1', price: '€150' }, { name: 'service5Sub2', price: '€250' }, { name: 'service5Sub3', price: '€50' }] },
+                { icon: 'fa-plus', title: 'service6Title', desc: 'service6Desc', subs: [{ name: 'service6Sub1', priceKey: 'free' }, { name: 'service6Sub2', price: '€150' }, { name: 'service6Sub3', price: '€100' }] },
+            ];
+            const stylistsData = [
+                { name: 'Ardit Krasniqi', role: 'stylist1Role', desc: 'stylist1Desc' },
+                { name: 'Elira Berisha', role: 'stylist2Role', desc: 'stylist2Desc' },
+                { name: 'Besnik Gashi', role: 'stylist3Role', desc: 'stylist3Desc' },
+                { name: 'Valbona Hoxha', role: 'stylist4Role', desc: 'stylist4Desc' }
+            ];
+            const testimonialsData = [
+                { name: 'Anisa Leka', quote: 'testimonial1Quote', type: 'testimonial1ClientType' },
+                { name: 'Luan Meta', quote: 'testimonial2Quote', type: 'testimonial2ClientType' },
+                { name: 'Fjolla Daci', quote: 'testimonial3Quote', type: 'testimonial3ClientType' }
+            ];
+            const galleryData = [
+                { img: "https://i.imgur.com/Kz589IQ.png", title: "gallery1Title", artist: "gallery1Artist", alt: "Balayage Transformation" },
+                { img: "https://i.imgur.com/QG7PtNx.png", title: "gallery2Title", artist: "gallery2Artist", alt: "Vibrant Color Melt" },
+                { img: "https://i.imgur.com/1P2g604.png", title: "gallery3Title", artist: "gallery3Artist", alt: "Sleek Bob Cut" },
+                { img: "https://i.imgur.com/01J8rC2.png", title: "gallery4Title", artist: "gallery4Artist", alt: "Curly Hair Enhancement" },
+                { img: "https://i.imgur.com/595ljsk.png", title: "gallery5Title", artist: "gallery5Artist", alt: "Long Layered Style" },
+                { img: "https://i.imgur.com/6vDYIPL.png", title: "gallery6Title", artist: "gallery6Artist", alt: "Platinum Blonde" },
+            ];
 
+            // --- RENDER FUNCTIONS ---
+            const renderContent = () => {
+                // About
+                document.getElementById('about-container').innerHTML = `
+                    <div class="flex flex-col lg:flex-row items-center gap-16">
+                        <div class="lg:w-1/2" data-aos="fade-right"><img src="https://i.imgur.com/C2IDSeu.png" alt="Interior of STRANDS salon" class="rounded-lg shadow-2xl object-cover w-full h-auto max-h-[500px]"></div>
+                        <div class="lg:w-1/2" data-aos="fade-left">
+                            <h2 class="section-title" data-translate-key="aboutTitle"></h2>
+                            <p class="text-gray-600 mb-6 text-lg" data-translate-key="aboutPara1"></p>
+                            <p class="text-gray-600 mb-8 text-lg" data-translate-key="aboutPara2"></p>
+                            <div class="grid grid-cols-2 gap-6 mb-10">
+                                <div class="flex items-center"><div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mr-4"><i class="fas fa-award text-secondary"></i></div><div><h4 class="font-semibold" data-translate-key="aboutAward"></h4><p class="text-gray-500 text-sm" data-translate-key="aboutAwardSub"></p></div></div>
+                                <div class="flex items-center"><div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mr-4"><i class="fas fa-leaf text-secondary"></i></div><div><h4 class="font-semibold" data-translate-key="aboutEco"></h4><p class="text-gray-500 text-sm" data-translate-key="aboutEcoSub"></p></div></div>
+                            </div>
+                            <a href="#contact" class="btn-primary py-4 px-8 rounded-full font-medium inline-block" data-translate-key="btnBookExperience"></a>
+                        </div>
+                    </div>`;
+
+                // Services
+                let servicesHTML = `<div class="text-center mb-16" data-aos="fade-up"><h2 class="section-title" data-translate-key="servicesTitle"></h2><p class="section-subtitle" data-translate-key="servicesSubtitle"></p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">`;
+                servicesData.forEach((s, i) => {
+                    servicesHTML += `
+                        <div class="service-card" data-aos="fade-up" data-aos-delay="${(i + 1) * 100}">
+                            <div class="mb-6"><div class="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center text-primary"><i class="fas ${s.icon} text-2xl"></i></div></div>
+                            <h3 class="text-2xl font-semibold cormorant text-primary mb-3" data-translate-key="${s.title}"></h3>
+                            <p class="text-gray-600 mb-6 flex-grow" data-translate-key="${s.desc}"></p>
+                            <details class="group"><summary class="flex justify-between items-center font-medium cursor-pointer text-secondary list-none"><span data-translate-key="viewSubservices"></span><i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i></summary>
+                                <div class="mt-4 pt-4 border-t border-gray-200 space-y-3 text-sm">
+                                    ${s.subs.map(sub => `<div class="flex justify-between"><span data-translate-key="${sub.name}"></span><span class="font-semibold text-primary">${sub.price ? sub.price : `<span data-translate-key='${sub.priceKey}'></span>`}</span></div>`).join('')}
+                                </div>
+                            </details>
+                        </div>`;
+                });
+                document.getElementById('services-container').innerHTML = servicesHTML + `</div>`;
+                
+                // Stylists
+                let stylistsHTML = `<div class="text-center mb-16" data-aos="fade-up"><h2 class="section-title" data-translate-key="stylistsTitle"></h2><p class="section-subtitle" data-translate-key="stylistsSubtitle"></p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">`;
+                stylistsData.forEach((s, i) => {
+                    stylistsHTML += `
+                        <div class="stylist-card" data-aos="fade-up" data-aos-delay="${(i + 1) * 100}">
+                            <div class="h-80 bg-gray-200 relative"><div class="absolute inset-0 bg-gradient-to-br from-secondary/20 to-primary/20"></div><div class="absolute inset-0 flex items-center justify-center"><div class="w-32 h-32 rounded-full bg-white flex items-center justify-center"><i class="fas fa-user text-4xl text-secondary"></i></div></div><div class="absolute inset-0 flex items-end p-6 text-white opacity-0 hover:opacity-100 transition-opacity bg-gradient-to-t from-black/80 via-transparent"><a href="#contact" class="text-white hover:text-secondary font-medium flex items-center transition-all text-sm"><span data-translate-key="bookWith"></span> ${s.name.split(' ')[0]} <i class="fas fa-arrow-right ml-2"></i></a></div></div>
+                            <div class="p-6 bg-white"><h3 class="text-xl font-semibold cormorant text-primary">${s.name}</h3><p class="text-secondary font-medium text-sm mb-2" data-translate-key="${s.role}"></p><p class="text-gray-600 text-sm" data-translate-key="${s.desc}"></p></div>
+                        </div>`;
+                });
+                document.getElementById('stylists-container').innerHTML = stylistsHTML + `</div>`;
+
+                // Gallery
+                let galleryHTML = `<div class="text-center mb-16" data-aos="fade-up"><h2 class="section-title" data-translate-key="galleryTitle"></h2><p class="section-subtitle" data-translate-key="gallerySubtitle"></p></div><div class="grid grid-cols-2 md:grid-cols-3 gap-4">`;
+                galleryData.forEach((item, i) => {
+                    galleryHTML += `<div class="relative rounded-xl overflow-hidden shadow-lg h-64 group" data-aos="zoom-in" data-aos-delay="${(i+1)*100}"><img src="${item.img}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="${item.alt}"><div class="absolute inset-0 flex items-end p-4 text-white bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"><div><h4 class="font-medium" data-translate-key="${item.title}"></h4><p class="text-xs" data-translate-key="${item.artist}"></p></div></div></div>`;
+                });
+                galleryHTML += `</div><div class="text-center mt-12" data-aos="fade-up"><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="btn-primary" data-translate-key="btnViewInstagram"></a></div>`;
+                document.getElementById('gallery-container').innerHTML = galleryHTML;
+
+                // Testimonials
+                let testimonialsHTML = `<div class="text-center mb-16" data-aos="fade-up"><h2 class="section-title" data-translate-key="testimonialsTitle"></h2><p class="section-subtitle" data-translate-key="testimonialsSubtitle"></p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8">`;
+                testimonialsData.forEach((t, i) => {
+                    testimonialsHTML += `
+                        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="${(i + 1) * 100}">
+                            <div class="flex justify-center mb-6"><div class="flex text-secondary space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+                            <p class="text-gray-600 italic mb-6" data-translate-key="${t.quote}"></p>
+                            <div class="flex items-center"><div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4"><i class="fas fa-user text-secondary"></i></div><div><h4 class="font-semibold">${t.name}</h4><p class="text-gray-500 text-sm" data-translate-key="${t.type}"></p></div></div>
+                        </div>`;
+                });
+                document.getElementById('testimonials-container').innerHTML = testimonialsHTML + `</div>`;
+
+                // Contact
+                document.getElementById('contact-container').innerHTML = `
+                    <div class="text-center mb-16" data-aos="fade-up"><h2 class="section-title" data-translate-key="contactTitle"></h2><p class="section-subtitle" data-translate-key="contactSubtitle"></p></div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div class="card" data-aos="fade-right">
+                            <h3 class="text-2xl font-semibold cormorant text-primary mb-6" data-translate-key="contactInfoTitle"></h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start"><div class="w-12 h-12 rounded-full bg-secondary/20 flex-shrink-0 flex items-center justify-center mr-4"><i class="fas fa-map-marker-alt text-secondary"></i></div><div><h4 class="font-semibold text-primary" data-translate-key="contactAddress"></h4><p class="text-gray-500">123 Sheshi Skënderbej, Tirana, Albania</p></div></div>
+                                <div class="flex items-start"><div class="w-12 h-12 rounded-full bg-secondary/20 flex-shrink-0 flex items-center justify-center mr-4"><i class="fas fa-envelope text-secondary"></i></div><div><h4 class="font-semibold text-primary" data-translate-key="contactEmail"></h4><p class="text-gray-500">contact@strands.al</p></div></div>
+                                <div class="flex items-start"><div class="w-12 h-12 rounded-full bg-secondary/20 flex-shrink-0 flex items-center justify-center mr-4"><i class="fas fa-phone text-secondary"></i></div><div><h4 class="font-semibold text-primary" data-translate-key="contactCall"></h4><p class="text-gray-500">+355 69 123 4567</p></div></div>
+                            </div>
+                        </div>
+                        <div class="card" data-aos="fade-left">
+                            <h3 class="text-2xl font-semibold cormorant text-primary mb-6" data-translate-key="contactFormTitle"></h3>
+                            <form action="https://formspree.io/f/your_unique_id" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div><label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formName"></label><input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"></div>
+                                <div><label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formEmail"></label><input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"></div>
+                                <div class="md:col-span-2"><label for="service" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formService"></label><select id="service" name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"><option data-translate-key="formServiceSelect"></option><option data-translate-key="formService1"></option><option data-translate-key="formService2"></option><option data-translate-key="formService3"></option><option data-translate-key="formService4"></option><option data-translate-key="formService5"></option><option data-translate-key="formService6"></option></select></div>
+                                <div class="md:col-span-2"><label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formMessage"></label><textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"></textarea></div>
+                                <div class="md:col-span-2"><button type="submit" class="btn-primary w-full py-3" data-translate-key="formButton"></button></div>
+                            </form>
+                        </div>
+                    </div>`;
+            };
+
+            // --- TRANSLATION & UI LOGIC ---
+            const elementsToTranslate = () => document.querySelectorAll('[data-translate-key]');
+            
+            const translatePage = (language) => {
+                elementsToTranslate().forEach(element => {
+                    const key = element.getAttribute('data-translate-key');
+                    if (translations[language]?.[key]) {
+                        element.innerHTML = translations[language][key];
+                    }
+                });
+                document.documentElement.lang = language;
+                document.getElementById('lang-text').textContent = language.toUpperCase();
+                document.getElementById('lang-flag').src = `https://flagcdn.com/w20/${language === 'en' ? 'gb' : 'al'}.png`;
+                localStorage.setItem('preferredLanguage', language);
+            };
+
+            const langToggle = document.getElementById('lang-toggle');
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    translatePage(option.getAttribute('data-lang'));
+                    langToggle.click(); // Close the dropdown
+                });
+            });
+
+            // Initial Render & Translate
+            renderContent();
+            AOS.init({ duration: 800, once: true, offset: 50 });
+            translatePage(localStorage.getItem('preferredLanguage') || 'en');
+
+            // UI Toggles
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const socialToggle = document.getElementById('social-toggle');
+            const socialOptions = document.getElementById('social-options');
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            socialToggle.addEventListener('click', e => { e.stopPropagation(); socialOptions.classList.toggle('hidden'); socialToggle.querySelector('i').classList.toggle('fa-share-alt'); socialToggle.querySelector('i').classList.toggle('fa-times'); });
+            langToggle.addEventListener('click', e => { e.stopPropagation(); document.getElementById('lang-options').classList.toggle('hidden'); langToggle.querySelector('i').classList.toggle('rotate-180'); });
+            document.addEventListener('click', () => {
+                for (let el of [document.getElementById('lang-options'), socialOptions]) {
+                    if (!el.classList.contains('hidden')) el.classList.add('hidden');
+                }
+                if (langToggle.querySelector('i').classList.contains('rotate-180')) langToggle.querySelector('i').classList.remove('rotate-180');
+                if (socialToggle.querySelector('i').classList.contains('fa-times')) { socialToggle.querySelector('i').classList.remove('fa-times'); socialToggle.querySelector('i').classList.add('fa-share-alt'); }
+            });
+        });
+    </script>
 </body>
 </html>
