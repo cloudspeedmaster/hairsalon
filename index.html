@@ -161,16 +161,6 @@
             width: 100%;
         }
         
-        .scroll-down {
-            animation: scrollDown 2s infinite;
-        }
-        
-        @keyframes scrollDown {
-            0% { transform: translateY(0); opacity: 0.7; }
-            50% { transform: translateY(10px); opacity: 1; }
-            100% { transform: translateY(0); opacity: 0.7; }
-        }
-        
         .text-stroke {
             -webkit-text-stroke: 1px var(--secondary);
             color: transparent;
@@ -182,27 +172,7 @@
             background-clip: text;
             color: transparent;
         }
-        
-        .custom-shape-divider {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
-        
-        .custom-shape-divider svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 70px;
-        }
-        
-        .custom-shape-divider .shape-fill {
-            fill: #FFFFFF;
-        }
-        
+
         .appointment-form input, 
         .appointment-form textarea, 
         .appointment-form select {
@@ -237,6 +207,13 @@
             font-family: 'Cormorant Garamond', serif;
             color: var(--secondary);
             opacity: 0.2;
+        }
+
+        /* Mobile background-attachment fix */
+        @media (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll;
+            }
         }
 
         /* Custom styles for Tailwind */
@@ -309,19 +286,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-        
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white scroll-down">
-            <a href="#about" class="flex flex-col items-center">
-                <span class="mb-2 text-sm" data-translate-key="scrollDown">Scroll Down</span>
-                <i class="fas fa-chevron-down"></i>
-            </a>
-        </div>
-        
-        <div class="custom-shape-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
         </div>
     </section>
 
@@ -603,7 +567,6 @@
                     heroSubtitle: "Where artistry meets precision to create your signature look",
                     btnExplore: "Explore Services",
                     btnBook: "Book Appointment",
-                    scrollDown: "Scroll Down",
                     aboutRedefining: "Redefining",
                     aboutHairArtistry: "Hair Artistry",
                     aboutPara1: "At STRANDS, we believe that exceptional hair is more than just a service—it's an art form. Our team of passionate stylists combines technical expertise with creative vision to deliver personalized looks that enhance your natural beauty and reflect your unique personality.",
@@ -650,16 +613,16 @@
                     service6Sub3: "Removal & Re-tape",
                     stylistsTitle: "Meet Our <span class='gradient-text'>Expert</span> Stylists",
                     stylistsSubtitle: "Our team of talented professionals brings creativity, passion, and expertise to every client experience.",
-                    bookWithArdit: "Rezervo me Arditin",
+                    bookWithArdit: "Book with Ardit",
                     stylist1Role: "Creative Director",
                     stylist1Desc: "Specializing in precision cuts and creative color with over 15 years of international experience.",
-                    bookWithElira: "Rezervo me Elirën",
+                    bookWithElira: "Book with Elira",
                     stylist2Role: "Color Specialist",
                     stylist2Desc: "Expert in balayage, ombré, and creative color techniques that enhance natural beauty.",
-                    bookWithBesnik: "Rezervo me Besnikun",
+                    bookWithBesnik: "Book with Besnik",
                     stylist3Role: "Style Director",
                     stylist3Desc: "Specializes in avant-garde styling, editorial work, and transformative makeovers.",
-                    bookWithValbona: "Rezervo me Valbonën",
+                    bookWithValbona: "Book with Valbona",
                     stylist4Role: "Texture Expert",
                     stylist4Desc: "Specializing in curly hair, extensions, and treatments that enhance natural texture.",
                     galleryTitle: "Our <span class='gradient-text'>Stunning</span> Portfolio",
@@ -719,7 +682,6 @@
                     heroSubtitle: "Ku mjeshtëria takohet me saktësinë për të krijuar pamjen tuaj unike",
                     btnExplore: "Eksploro Shërbimet",
                     btnBook: "Rezervo një takim",
-                    scrollDown: "Lëviz Poshtë",
                     aboutRedefining: "Rindërtimi i",
                     aboutHairArtistry: "Artit të Flokëve",
                     aboutPara1: "Në STRANDS, ne besojmë se flokët e jashtëzakonshëm janë më shumë se një shërbim—janë një formë arti. Ekipi ynë i stilistëve të pasionuar kombinon ekspertizën teknike me vizionin krijues për të ofruar pamje të personalizuara që theksojnë bukurinë tuaj natyrore dhe pasqyrojnë personalitetin tuaj unik.",
