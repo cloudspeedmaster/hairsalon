@@ -22,34 +22,44 @@
         .cormorant { @apply font-['Cormorant_Garamond',_serif]; }
         .hero-section { background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("https://i.imgur.com/RWznAA6.png"); @apply bg-cover bg-center bg-fixed; }
         
-        /* Utility & Component Classes */
-        .section-title { @apply text-4xl md:text-5xl font-bold cormorant text-primary mb-4; }
-        .section-subtitle { @apply text-gray-600 max-w-2xl mx-auto text-lg; }
-        .card { @apply bg-white rounded-xl shadow-lg p-8; }
-        .service-card { @apply card flex flex-col transition-all duration-500 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:transform hover:-translate-y-2 hover:shadow-2xl; }
-        .stylist-card { @apply rounded-xl overflow-hidden shadow-lg transition-transform duration-500 hover:-translate-y-1; }
-        .testimonial-card { @apply card relative transition-transform duration-500 hover:-translate-y-1 hover:scale-[1.02]; }
+        /* Component-specific styling to preserve original design */
+        .service-card {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.9) 100%);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+        .service-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .stylist-card { overflow: hidden; transition: all 0.5s ease; }
+        .stylist-card:hover { transform: translateY(-5px); }
+        .stylist-card:hover .stylist-overlay { opacity: 1; }
+        .stylist-overlay { background: linear-gradient(to top, rgba(26, 26, 26, 0.9), transparent); opacity: 0; transition: all 0.5s ease; }
+        .gallery-item img { transition: all 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay { background: linear-gradient(to top, rgba(26, 26, 26, 0.8), transparent); opacity: 0; transition: all 0.5s ease; }
+        .testimonial-card { transition: all 0.5s ease; }
+        .testimonial-card:hover { transform: translateY(-5px) scale(1.02); }
         .testimonial-card::before { content: '"'; @apply absolute top-[-20px] left-5 text-8xl cormorant text-secondary opacity-20; }
         
-        .btn-primary { @apply py-4 px-8 rounded-full font-medium text-lg bg-secondary text-dark relative overflow-hidden z-[1] transition-colors duration-300; }
+        /* Simpler Utility Classes */
+        .section-title { @apply text-4xl md:text-5xl font-bold cormorant text-primary mb-4; }
+        .section-subtitle { @apply text-gray-600 max-w-2xl mx-auto text-lg; }
+        .btn-primary { @apply bg-secondary text-dark relative overflow-hidden z-[1] transition-colors duration-300; }
         .btn-primary::before { content: ''; @apply absolute top-0 left-0 w-0 h-full bg-primary transition-all duration-300 ease-in-out z-[-1]; }
         .btn-primary:hover { @apply text-light; }
         .btn-primary:hover::before { @apply w-full; }
-        
-        .btn-outline { @apply py-4 px-8 rounded-full font-medium text-lg border-2 border-secondary text-light transition-all duration-300; }
+        .btn-outline { @apply border-2 border-secondary text-light transition-all duration-300; }
         .btn-outline:hover { @apply bg-secondary text-dark; }
-
         .nav-link { @apply relative text-primary hover:text-secondary font-medium; }
         .nav-link::after { content: ''; @apply absolute w-0 h-0.5 bottom-[-4px] left-0 bg-secondary transition-all duration-300; }
         .nav-link:hover::after { @apply w-full; }
-
         .gradient-text { @apply bg-gradient-to-r from-secondary to-[#f5e6a8] bg-clip-text text-transparent; }
         .text-stroke { -webkit-text-stroke: 1px var(--secondary); @apply text-transparent; }
-
         .custom-shape-divider { @apply absolute bottom-0 left-0 w-full overflow-hidden leading-none; }
         .custom-shape-divider svg { @apply relative block w-[calc(100%+1.3px)] h-[70px]; }
         .custom-shape-divider .shape-fill { fill: var(--light); }
-        
         .bg-secondary { background-color: var(--secondary); }
         .text-secondary { color: var(--secondary); }
         .bg-primary { background-color: var(--primary); }
@@ -91,15 +101,15 @@
             <h1 class="text-6xl md:text-8xl font-bold cormorant text-white mb-6" data-aos="fade-up"><span class="text-stroke" data-translate-key="heroElevate">ELEVATE</span> <span class="gradient-text" data-translate-key="heroYourStyle">YOUR STYLE</span></h1>
             <p class="text-xl md:text-2xl text-gray-200 mb-10" data-aos="fade-up" data-aos-delay="200" data-translate-key="heroSubtitle">Where artistry meets precision to create your signature look</p>
             <div class="flex flex-col md:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="400">
-                <a href="#services" class="btn-primary" data-translate-key="btnExplore">Explore Services</a>
-                <a href="#contact" class="btn-outline" data-translate-key="btnBook">Book Appointment</a>
+                <a href="#services" class="btn-primary py-4 px-8 rounded-full font-medium text-lg" data-translate-key="btnExplore">Explore Services</a>
+                <a href="#contact" class="btn-outline py-4 px-8 rounded-full font-medium text-lg" data-translate-key="btnBook">Book Appointment</a>
             </div>
         </div>
         <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce"><a href="#about" class="flex flex-col items-center"><span class="text-sm mb-2" data-translate-key="scrollDown">Scroll Down</span><i class="fas fa-chevron-down"></i></a></div>
         <div class="custom-shape-divider"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path></svg></div>
     </section>
 
-    <!-- Sections will be dynamically populated by JavaScript -->
+    <!-- Dynamically Populated Sections -->
     <main>
         <section id="about" class="py-20"><div id="about-container" class="container mx-auto px-4"></div></section>
         <section id="services" class="py-20 bg-gray-50"><div id="services-container" class="container mx-auto px-4"></div></section>
@@ -109,34 +119,17 @@
         <section id="contact" class="py-20 bg-gray-50"><div id="contact-container" class="container mx-auto px-4"></div></section>
     </main>
 
-    <!-- Google Maps & Footer -->
+    <!-- Footer & Map -->
     <section id="location" class="bg-accent"><div class="container mx-auto p-4 md:p-8"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.166943361819!2d19.8169929154238!3d41.32754597926955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310e5f227b6f%3A0x40092af10675750!2sSkanderbeg%20Square%2C%20Tirana%2C%20Albania!5e0!3m2!1sen!2s" width="100%" height="450" style="border:0;" class="rounded-lg shadow-lg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></section>
     <footer class="bg-primary text-gray-400 text-center py-8 px-4"><p data-translate-key="footerRights">© 2024 STRANDS | Premium Hair Salon. All Rights Reserved.</p><p class="text-sm mt-2" data-translate-key="footerDesign">Designed with <i class="fas fa-heart text-secondary"></i></p></footer>
     
     <!-- Floating Widgets -->
-    <div class="fixed bottom-4 left-4 z-[100]">
-        <div class="relative" id="lang-switcher">
-            <button id="lang-toggle" class="flex items-center space-x-2 bg-secondary text-dark p-2 rounded-full shadow-lg transition-transform hover:scale-105"><img id="lang-flag" src="https://flagcdn.com/w20/gb.png" class="w-5 h-5 rounded-full object-cover"><span id="lang-text" class="font-semibold text-sm">EN</span><i class="fas fa-chevron-up text-xs transition-transform"></i></button>
-            <div id="lang-options" class="hidden absolute bottom-full mb-2 w-full bg-secondary rounded-lg shadow-lg overflow-hidden">
-                <a href="#" class="lang-option flex items-center space-x-2 p-2 text-dark hover:bg-black/10" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" class="w-5 h-5 rounded-full object-cover"><span class="text-sm">EN</span></a>
-                <a href="#" class="lang-option flex items-center space-x-2 p-2 text-dark hover:bg-black/10" data-lang="al"><img src="https://flagcdn.com/w20/al.png" class="w-5 h-5 rounded-full object-cover"><span class="text-sm">AL</span></a>
-            </div>
-        </div>
-    </div>
-    <div class="fixed bottom-4 right-4 z-[100]">
-        <div class="relative" id="social-switcher">
-             <div id="social-options" class="hidden absolute bottom-full right-0 mb-4 flex flex-col items-center space-y-3">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-secondary shadow-lg flex items-center justify-center text-dark transform transition-transform hover:scale-110"><i class="fab fa-facebook-f text-2xl"></i></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-secondary shadow-lg flex items-center justify-center text-dark transform transition-transform hover:scale-110"><i class="fab fa-instagram text-2xl"></i></a>
-                <a href="https://wa.me/355691234567" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-secondary shadow-lg flex items-center justify-center text-dark transform transition-transform hover:scale-110"><i class="fab fa-whatsapp text-2xl"></i></a>
-            </div>
-            <button id="social-toggle" class="flex items-center justify-center bg-secondary text-dark w-14 h-14 rounded-full shadow-lg transform transition-transform hover:scale-110"><i class="fas fa-share-alt text-xl"></i></button>
-        </div>
-    </div>
+    <div class="fixed bottom-4 left-4 z-[100]"><div class="relative" id="lang-switcher"><button id="lang-toggle" class="flex items-center space-x-2 bg-secondary text-dark p-2 rounded-full shadow-lg transition-transform hover:scale-105"><img id="lang-flag" src="https://flagcdn.com/w20/gb.png" class="w-5 h-5 rounded-full object-cover"><span id="lang-text" class="font-semibold text-sm">EN</span><i class="fas fa-chevron-up text-xs transition-transform"></i></button><div id="lang-options" class="hidden absolute bottom-full mb-2 w-full bg-secondary rounded-lg shadow-lg overflow-hidden"><a href="#" class="lang-option flex items-center space-x-2 p-2 text-dark hover:bg-black/10" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" class="w-5 h-5 rounded-full object-cover"><span class="text-sm">EN</span></a><a href="#" class="lang-option flex items-center space-x-2 p-2 text-dark hover:bg-black/10" data-lang="al"><img src="https://flagcdn.com/w20/al.png" class="w-5 h-5 rounded-full object-cover"><span class="text-sm">AL</span></a></div></div></div>
+    <div class="fixed bottom-4 right-4 z-[100]"><div class="relative" id="social-switcher"><div id="social-options" class="hidden absolute bottom-full right-0 mb-4 flex flex-col items-center space-y-3"><a href="https://facebook.com" target="_blank" class="w-12 h-12 rounded-full bg-secondary shadow-lg flex items-center justify-center text-dark transform transition-transform hover:scale-110"><i class="fab fa-facebook-f text-2xl"></i></a><a href="https://instagram.com" target="_blank" class="w-12 h-12 rounded-full bg-secondary shadow-lg flex items-center justify-center text-dark transform transition-transform hover:scale-110"><i class="fab fa-instagram text-2xl"></i></a><a href="https://wa.me/355691234567" target="_blank" class="w-12 h-12 rounded-full bg-secondary shadow-lg flex items-center justify-center text-dark transform transition-transform hover:scale-110"><i class="fab fa-whatsapp text-2xl"></i></a></div><button id="social-toggle" class="flex items-center justify-center bg-secondary text-dark w-14 h-14 rounded-full shadow-lg transform transition-transform hover:scale-110"><i class="fas fa-share-alt text-xl"></i></button></div></div>
 
     <script>
+        // Data and Logic Script
         document.addEventListener('DOMContentLoaded', function () {
-            // --- DATA ---
             const translations = {
                 en: {
                     navHome: "Home", navAbout: "About", navServices: "Services", navStylists: "Stylists", navGallery: "Gallery", navContact: "Contact",
@@ -245,114 +238,33 @@
                 { name: 'Fjolla Daci', quote: 'testimonial3Quote', type: 'testimonial3ClientType' }
             ];
             const galleryData = [
-                { img: "https://i.imgur.com/Kz589IQ.png", title: "gallery1Title", artist: "gallery1Artist", alt: "Balayage Transformation" },
-                { img: "https://i.imgur.com/QG7PtNx.png", title: "gallery2Title", artist: "gallery2Artist", alt: "Vibrant Color Melt" },
-                { img: "https://i.imgur.com/1P2g604.png", title: "gallery3Title", artist: "gallery3Artist", alt: "Sleek Bob Cut" },
-                { img: "https://i.imgur.com/01J8rC2.png", title: "gallery4Title", artist: "gallery4Artist", alt: "Curly Hair Enhancement" },
-                { img: "https://i.imgur.com/595ljsk.png", title: "gallery5Title", artist: "gallery5Artist", alt: "Long Layered Style" },
-                { img: "https://i.imgur.com/6vDYIPL.png", title: "gallery6Title", artist: "gallery6Artist", alt: "Platinum Blonde" },
+                { img: "https://i.imgur.com/Kz589IQ.png", title: "gallery1Title", artist: "gallery1Artist", alt: "Balayage Transformation" }, { img: "https://i.imgur.com/QG7PtNx.png", title: "gallery2Title", artist: "gallery2Artist", alt: "Vibrant Color Melt" },
+                { img: "https://i.imgur.com/1P2g604.png", title: "gallery3Title", artist: "gallery3Artist", alt: "Sleek Bob Cut" }, { img: "https://i.imgur.com/01J8rC2.png", title: "gallery4Title", artist: "gallery4Artist", alt: "Curly Hair Enhancement" },
+                { img: "https://i.imgur.com/595ljsk.png", title: "gallery5Title", artist: "gallery5Artist", alt: "Long Layered Style" }, { img: "https://i.imgur.com/6vDYIPL.png", title: "gallery6Title", artist: "gallery6Artist", alt: "Platinum Blonde" },
             ];
 
-            // --- RENDER FUNCTIONS ---
             const renderContent = () => {
-                // About
-                document.getElementById('about-container').innerHTML = `
-                    <div class="flex flex-col lg:flex-row items-center gap-16">
-                        <div class="lg:w-1/2" data-aos="fade-right"><img src="https://i.imgur.com/C2IDSeu.png" alt="Interior of STRANDS salon" class="rounded-lg shadow-2xl object-cover w-full h-auto max-h-[500px]"></div>
-                        <div class="lg:w-1/2" data-aos="fade-left">
-                            <h2 class="section-title" data-translate-key="aboutTitle"></h2>
-                            <p class="text-gray-600 mb-6 text-lg" data-translate-key="aboutPara1"></p>
-                            <p class="text-gray-600 mb-8 text-lg" data-translate-key="aboutPara2"></p>
-                            <div class="grid grid-cols-2 gap-6 mb-10">
-                                <div class="flex items-center"><div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mr-4"><i class="fas fa-award text-secondary"></i></div><div><h4 class="font-semibold" data-translate-key="aboutAward"></h4><p class="text-gray-500 text-sm" data-translate-key="aboutAwardSub"></p></div></div>
-                                <div class="flex items-center"><div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mr-4"><i class="fas fa-leaf text-secondary"></i></div><div><h4 class="font-semibold" data-translate-key="aboutEco"></h4><p class="text-gray-500 text-sm" data-translate-key="aboutEcoSub"></p></div></div>
-                            </div>
-                            <a href="#contact" class="btn-primary py-4 px-8 rounded-full font-medium inline-block" data-translate-key="btnBookExperience"></a>
-                        </div>
-                    </div>`;
-
-                // Services
+                document.getElementById('about-container').innerHTML = `<div class="flex flex-col lg:flex-row items-center gap-16"><div class="lg:w-1/2" data-aos="fade-right"><img src="https://i.imgur.com/C2IDSeu.png" alt="Interior of STRANDS salon" class="rounded-lg shadow-2xl object-cover w-full h-auto max-h-[500px]"></div><div class="lg:w-1/2" data-aos="fade-left"><h2 class="section-title" data-translate-key="aboutTitle"></h2><p class="text-gray-600 mb-6 text-lg" data-translate-key="aboutPara1"></p><p class="text-gray-600 mb-8 text-lg" data-translate-key="aboutPara2"></p><div class="grid grid-cols-2 gap-6 mb-10"><div class="flex items-center"><div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mr-4"><i class="fas fa-award text-secondary"></i></div><div><h4 class="font-semibold" data-translate-key="aboutAward"></h4><p class="text-gray-500 text-sm" data-translate-key="aboutAwardSub"></p></div></div><div class="flex items-center"><div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mr-4"><i class="fas fa-leaf text-secondary"></i></div><div><h4 class="font-semibold" data-translate-key="aboutEco"></h4><p class="text-gray-500 text-sm" data-translate-key="aboutEcoSub"></p></div></div></div><a href="#contact" class="btn-primary py-4 px-8 rounded-full font-medium inline-block" data-translate-key="btnBookExperience"></a></div></div>`;
                 let servicesHTML = `<div class="text-center mb-16" data-aos="fade-up"><h2 class="section-title" data-translate-key="servicesTitle"></h2><p class="section-subtitle" data-translate-key="servicesSubtitle"></p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">`;
-                servicesData.forEach((s, i) => {
-                    servicesHTML += `
-                        <div class="service-card" data-aos="fade-up" data-aos-delay="${(i + 1) * 100}">
-                            <div class="mb-6"><div class="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center text-primary"><i class="fas ${s.icon} text-2xl"></i></div></div>
-                            <h3 class="text-2xl font-semibold cormorant text-primary mb-3" data-translate-key="${s.title}"></h3>
-                            <p class="text-gray-600 mb-6 flex-grow" data-translate-key="${s.desc}"></p>
-                            <details class="group"><summary class="flex justify-between items-center font-medium cursor-pointer text-secondary list-none"><span data-translate-key="viewSubservices"></span><i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i></summary>
-                                <div class="mt-4 pt-4 border-t border-gray-200 space-y-3 text-sm">
-                                    ${s.subs.map(sub => `<div class="flex justify-between"><span data-translate-key="${sub.name}"></span><span class="font-semibold text-primary">${sub.price ? sub.price : `<span data-translate-key='${sub.priceKey}'></span>`}</span></div>`).join('')}
-                                </div>
-                            </details>
-                        </div>`;
-                });
+                servicesData.forEach((s, i) => { servicesHTML += `<div class="service-card rounded-xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="${(i + 1) * 100}"><div class="mb-6"><div class="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center text-primary"><i class="fas ${s.icon} text-2xl"></i></div></div><h3 class="text-2xl font-semibold cormorant text-primary mb-3" data-translate-key="${s.title}"></h3><p class="text-gray-600 mb-6 flex-grow" data-translate-key="${s.desc}"></p><details class="group"><summary class="flex justify-between items-center font-medium cursor-pointer text-secondary list-none"><span data-translate-key="viewSubservices"></span><i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i></summary><div class="mt-4 pt-4 border-t border-gray-200 space-y-3 text-sm">${s.subs.map(sub => `<div class="flex justify-between"><span data-translate-key="${sub.name}"></span><span class="font-semibold text-primary">${sub.price ? sub.price : `<span data-translate-key='${sub.priceKey}'></span>`}</span></div>`).join('')}</div></details></div>`; });
                 document.getElementById('services-container').innerHTML = servicesHTML + `</div>`;
-                
-                // Stylists
                 let stylistsHTML = `<div class="text-center mb-16" data-aos="fade-up"><h2 class="section-title" data-translate-key="stylistsTitle"></h2><p class="section-subtitle" data-translate-key="stylistsSubtitle"></p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">`;
-                stylistsData.forEach((s, i) => {
-                    stylistsHTML += `
-                        <div class="stylist-card" data-aos="fade-up" data-aos-delay="${(i + 1) * 100}">
-                            <div class="h-80 bg-gray-200 relative"><div class="absolute inset-0 bg-gradient-to-br from-secondary/20 to-primary/20"></div><div class="absolute inset-0 flex items-center justify-center"><div class="w-32 h-32 rounded-full bg-white flex items-center justify-center"><i class="fas fa-user text-4xl text-secondary"></i></div></div><div class="absolute inset-0 flex items-end p-6 text-white opacity-0 hover:opacity-100 transition-opacity bg-gradient-to-t from-black/80 via-transparent"><a href="#contact" class="text-white hover:text-secondary font-medium flex items-center transition-all text-sm"><span data-translate-key="bookWith"></span> ${s.name.split(' ')[0]} <i class="fas fa-arrow-right ml-2"></i></a></div></div>
-                            <div class="p-6 bg-white"><h3 class="text-xl font-semibold cormorant text-primary">${s.name}</h3><p class="text-secondary font-medium text-sm mb-2" data-translate-key="${s.role}"></p><p class="text-gray-600 text-sm" data-translate-key="${s.desc}"></p></div>
-                        </div>`;
-                });
+                stylistsData.forEach((s, i) => { stylistsHTML += `<div class="stylist-card rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="${(i + 1) * 100}"><div class="h-80 bg-gray-200 relative"><div class="absolute inset-0 bg-gradient-to-br from-secondary/20 to-primary/20"></div><div class="absolute inset-0 flex items-center justify-center"><div class="w-32 h-32 rounded-full bg-white flex items-center justify-center"><i class="fas fa-user text-4xl text-secondary"></i></div></div><div class="stylist-overlay absolute inset-0 flex items-end p-6"><a href="#contact" class="text-white hover:text-secondary font-medium flex items-center transition-all text-sm"><span data-translate-key="bookWith"></span> ${s.name.split(' ')[0]} <i class="fas fa-arrow-right ml-2"></i></a></div></div><div class="p-6 bg-white"><h3 class="text-xl font-semibold cormorant text-primary">${s.name}</h3><p class="text-secondary font-medium text-sm mb-2" data-translate-key="${s.role}"></p><p class="text-gray-600 text-sm" data-translate-key="${s.desc}"></p></div></div>`; });
                 document.getElementById('stylists-container').innerHTML = stylistsHTML + `</div>`;
-
-                // Gallery
                 let galleryHTML = `<div class="text-center mb-16" data-aos="fade-up"><h2 class="section-title" data-translate-key="galleryTitle"></h2><p class="section-subtitle" data-translate-key="gallerySubtitle"></p></div><div class="grid grid-cols-2 md:grid-cols-3 gap-4">`;
-                galleryData.forEach((item, i) => {
-                    galleryHTML += `<div class="relative rounded-xl overflow-hidden shadow-lg h-64 group" data-aos="zoom-in" data-aos-delay="${(i+1)*100}"><img src="${item.img}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="${item.alt}"><div class="absolute inset-0 flex items-end p-4 text-white bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"><div><h4 class="font-medium" data-translate-key="${item.title}"></h4><p class="text-xs" data-translate-key="${item.artist}"></p></div></div></div>`;
-                });
-                galleryHTML += `</div><div class="text-center mt-12" data-aos="fade-up"><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="btn-primary" data-translate-key="btnViewInstagram"></a></div>`;
+                galleryData.forEach((item, i) => { galleryHTML += `<div class="gallery-item relative rounded-xl overflow-hidden shadow-lg h-64" data-aos="zoom-in" data-aos-delay="${(i+1)*100}"><img src="${item.img}" class="w-full h-full object-cover" alt="${item.alt}"><div class="gallery-overlay absolute inset-0 flex items-end p-4 text-white"><div><h4 class="font-medium" data-translate-key="${item.title}"></h4><p class="text-xs" data-translate-key="${item.artist}"></p></div></div></div>`; });
+                galleryHTML += `</div><div class="text-center mt-12" data-aos="fade-up"><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="btn-primary py-4 px-8 rounded-full font-medium inline-block" data-translate-key="btnViewInstagram"></a></div>`;
                 document.getElementById('gallery-container').innerHTML = galleryHTML;
-
-                // Testimonials
                 let testimonialsHTML = `<div class="text-center mb-16" data-aos="fade-up"><h2 class="section-title" data-translate-key="testimonialsTitle"></h2><p class="section-subtitle" data-translate-key="testimonialsSubtitle"></p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8">`;
-                testimonialsData.forEach((t, i) => {
-                    testimonialsHTML += `
-                        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="${(i + 1) * 100}">
-                            <div class="flex justify-center mb-6"><div class="flex text-secondary space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
-                            <p class="text-gray-600 italic mb-6" data-translate-key="${t.quote}"></p>
-                            <div class="flex items-center"><div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4"><i class="fas fa-user text-secondary"></i></div><div><h4 class="font-semibold">${t.name}</h4><p class="text-gray-500 text-sm" data-translate-key="${t.type}"></p></div></div>
-                        </div>`;
-                });
+                testimonialsData.forEach((t, i) => { testimonialsHTML += `<div class="testimonial-card bg-white rounded-xl p-8 shadow-lg relative" data-aos="fade-up" data-aos-delay="${(i + 1) * 100}"><div class="flex justify-center mb-6"><div class="flex text-secondary space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><p class="text-gray-600 italic mb-6" data-translate-key="${t.quote}"></p><div class="flex items-center"><div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4"><i class="fas fa-user text-secondary"></i></div><div><h4 class="font-semibold">${t.name}</h4><p class="text-gray-500 text-sm" data-translate-key="${t.type}"></p></div></div></div>`; });
                 document.getElementById('testimonials-container').innerHTML = testimonialsHTML + `</div>`;
-
-                // Contact
-                document.getElementById('contact-container').innerHTML = `
-                    <div class="text-center mb-16" data-aos="fade-up"><h2 class="section-title" data-translate-key="contactTitle"></h2><p class="section-subtitle" data-translate-key="contactSubtitle"></p></div>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        <div class="card" data-aos="fade-right">
-                            <h3 class="text-2xl font-semibold cormorant text-primary mb-6" data-translate-key="contactInfoTitle"></h3>
-                            <div class="space-y-6">
-                                <div class="flex items-start"><div class="w-12 h-12 rounded-full bg-secondary/20 flex-shrink-0 flex items-center justify-center mr-4"><i class="fas fa-map-marker-alt text-secondary"></i></div><div><h4 class="font-semibold text-primary" data-translate-key="contactAddress"></h4><p class="text-gray-500">123 Sheshi Skënderbej, Tirana, Albania</p></div></div>
-                                <div class="flex items-start"><div class="w-12 h-12 rounded-full bg-secondary/20 flex-shrink-0 flex items-center justify-center mr-4"><i class="fas fa-envelope text-secondary"></i></div><div><h4 class="font-semibold text-primary" data-translate-key="contactEmail"></h4><p class="text-gray-500">contact@strands.al</p></div></div>
-                                <div class="flex items-start"><div class="w-12 h-12 rounded-full bg-secondary/20 flex-shrink-0 flex items-center justify-center mr-4"><i class="fas fa-phone text-secondary"></i></div><div><h4 class="font-semibold text-primary" data-translate-key="contactCall"></h4><p class="text-gray-500">+355 69 123 4567</p></div></div>
-                            </div>
-                        </div>
-                        <div class="card" data-aos="fade-left">
-                            <h3 class="text-2xl font-semibold cormorant text-primary mb-6" data-translate-key="contactFormTitle"></h3>
-                            <form action="https://formspree.io/f/your_unique_id" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div><label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formName"></label><input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"></div>
-                                <div><label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formEmail"></label><input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"></div>
-                                <div class="md:col-span-2"><label for="service" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formService"></label><select id="service" name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"><option data-translate-key="formServiceSelect"></option><option data-translate-key="formService1"></option><option data-translate-key="formService2"></option><option data-translate-key="formService3"></option><option data-translate-key="formService4"></option><option data-translate-key="formService5"></option><option data-translate-key="formService6"></option></select></div>
-                                <div class="md:col-span-2"><label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formMessage"></label><textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"></textarea></div>
-                                <div class="md:col-span-2"><button type="submit" class="btn-primary w-full py-3" data-translate-key="formButton"></button></div>
-                            </form>
-                        </div>
-                    </div>`;
+                document.getElementById('contact-container').innerHTML = `<div class="text-center mb-16" data-aos="fade-up"><h2 class="section-title" data-translate-key="contactTitle"></h2><p class="section-subtitle" data-translate-key="contactSubtitle"></p></div><div class="grid grid-cols-1 lg:grid-cols-2 gap-12"><div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-right"><h3 class="text-2xl font-semibold cormorant text-primary mb-6" data-translate-key="contactInfoTitle"></h3><div class="space-y-6"><div class="flex items-start"><div class="w-12 h-12 rounded-full bg-secondary/20 flex-shrink-0 flex items-center justify-center mr-4"><i class="fas fa-map-marker-alt text-secondary"></i></div><div><h4 class="font-semibold text-primary" data-translate-key="contactAddress"></h4><p class="text-gray-500">123 Sheshi Skënderbej, Tirana, Albania</p></div></div><div class="flex items-start"><div class="w-12 h-12 rounded-full bg-secondary/20 flex-shrink-0 flex items-center justify-center mr-4"><i class="fas fa-envelope text-secondary"></i></div><div><h4 class="font-semibold text-primary" data-translate-key="contactEmail"></h4><p class="text-gray-500">contact@strands.al</p></div></div><div class="flex items-start"><div class="w-12 h-12 rounded-full bg-secondary/20 flex-shrink-0 flex items-center justify-center mr-4"><i class="fas fa-phone text-secondary"></i></div><div><h4 class="font-semibold text-primary" data-translate-key="contactCall"></h4><p class="text-gray-500">+355 69 123 4567</p></div></div></div></div><div class="bg-white rounded-xl shadow-lg p-8" data-aos="fade-left"><h3 class="text-2xl font-semibold cormorant text-primary mb-6" data-translate-key="contactFormTitle"></h3><form action="https://formspree.io/f/your_unique_id" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formName"></label><input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"></div><div><label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formEmail"></label><input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"></div><div class="md:col-span-2"><label for="service" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formService"></label><select id="service" name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"><option data-translate-key="formServiceSelect"></option><option data-translate-key="formService1"></option><option data-translate-key="formService2"></option><option data-translate-key="formService3"></option><option data-translate-key="formService4"></option><option data-translate-key="formService5"></option><option data-translate-key="formService6"></option></select></div><div class="md:col-span-2"><label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="formMessage"></label><textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-secondary"></textarea></div><div class="md:col-span-2"><button type="submit" class="btn-primary w-full py-4 px-8 rounded-full font-medium text-lg" data-translate-key="formButton"></button></div></form></div></div>`;
             };
 
-            // --- TRANSLATION & UI LOGIC ---
-            const elementsToTranslate = () => document.querySelectorAll('[data-translate-key]');
-            
             const translatePage = (language) => {
-                elementsToTranslate().forEach(element => {
-                    const key = element.getAttribute('data-translate-key');
-                    if (translations[language]?.[key]) {
-                        element.innerHTML = translations[language][key];
-                    }
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.getAttribute('data-translate-key');
+                    if (translations[language]?.[key]) { el.innerHTML = translations[language][key]; }
                 });
                 document.documentElement.lang = language;
                 document.getElementById('lang-text').textContent = language.toUpperCase();
@@ -360,34 +272,23 @@
                 localStorage.setItem('preferredLanguage', language);
             };
 
-            const langToggle = document.getElementById('lang-toggle');
-            document.querySelectorAll('.lang-option').forEach(option => {
-                option.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    translatePage(option.getAttribute('data-lang'));
-                    langToggle.click(); // Close the dropdown
-                });
-            });
-
-            // Initial Render & Translate
             renderContent();
             AOS.init({ duration: 800, once: true, offset: 50 });
             translatePage(localStorage.getItem('preferredLanguage') || 'en');
 
-            // UI Toggles
+            const langToggle = document.getElementById('lang-toggle');
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', (e) => { e.preventDefault(); translatePage(option.getAttribute('data-lang')); langToggle.click(); });
+            });
             const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
             const socialToggle = document.getElementById('social-toggle');
-            const socialOptions = document.getElementById('social-options');
-            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-            socialToggle.addEventListener('click', e => { e.stopPropagation(); socialOptions.classList.toggle('hidden'); socialToggle.querySelector('i').classList.toggle('fa-share-alt'); socialToggle.querySelector('i').classList.toggle('fa-times'); });
+            mobileMenuButton.addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+            socialToggle.addEventListener('click', e => { e.stopPropagation(); document.getElementById('social-options').classList.toggle('hidden'); socialToggle.querySelector('i').classList.toggle('fa-share-alt'); socialToggle.querySelector('i').classList.toggle('fa-times'); });
             langToggle.addEventListener('click', e => { e.stopPropagation(); document.getElementById('lang-options').classList.toggle('hidden'); langToggle.querySelector('i').classList.toggle('rotate-180'); });
             document.addEventListener('click', () => {
-                for (let el of [document.getElementById('lang-options'), socialOptions]) {
-                    if (!el.classList.contains('hidden')) el.classList.add('hidden');
-                }
+                for (let el of [document.getElementById('lang-options'), document.getElementById('social-options')]) { if (!el.classList.contains('hidden')) el.classList.add('hidden'); }
                 if (langToggle.querySelector('i').classList.contains('rotate-180')) langToggle.querySelector('i').classList.remove('rotate-180');
-                if (socialToggle.querySelector('i').classList.contains('fa-times')) { socialToggle.querySelector('i').classList.remove('fa-times'); socialToggle.querySelector('i').classList.add('fa-share-alt'); }
+                if (socialToggle.querySelector('i').classList.contains('fa-times')) { socialToggle.querySelector('i').classList.replace('fa-times', 'fa-share-alt'); }
             });
         });
     </script>
